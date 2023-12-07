@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class selection_sort {
     public static void main(String[] args) {
-        try (Scanner sc = new Scanner(System.in)) {
+           try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Enter the size of array");
             int n = sc.nextInt();
             int arr[] = new int[n];
@@ -27,6 +27,7 @@ public class selection_sort {
                 System.out.println(arr[i]);
             }
         }
+        }
 
     }
-}
+
