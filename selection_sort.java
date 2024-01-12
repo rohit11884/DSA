@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class selection_sort {
     public static void main(String[] args) {
-           try (Scanner sc = new Scanner(System.in)) {
+        try (Scanner sc = new Scanner(System.in)) {
             System.out.println("Enter the size of array");
             int n = sc.nextInt();
             int arr[] = new int[n];
@@ -10,24 +10,21 @@ public class selection_sort {
             for (int i = 0; i < n; i++) {
                 arr[i] = sc.nextInt();
             }
-            for (int i = 0; i < n - 1; i++) {
-
-                for (int j = i + 1; j < n; j++) {
+            for (int i = 0; i < n; i++) {
+                for (int j = i; j < n; j++) {
                     if (arr[j] < arr[i]) {
-                        int temp = 0;
-                        temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        int temp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp;
                     }
                 }
 
             }
             System.out.println("Sorted array is ");
             for (int i = 0; i < n; i++) {
-                System.out.println(arr[i]);
+                System.out.print(arr[i] + " ");
             }
         }
-        }
-
     }
 
+}

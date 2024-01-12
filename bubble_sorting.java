@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class bubble_sorting {
     public static void main(String[] args) {
-         {
-                 Scanner sc = new Scanner(System.in);
+        {
+            try (Scanner sc = new Scanner(System.in)) {
                 System.out.println("Enter the size of array");
                 int n = sc.nextInt();
                 int arr[] = new int[n];
@@ -11,24 +11,27 @@ public class bubble_sorting {
                 for (int i = 0; i < n; i++) {
                     arr[i] = sc.nextInt();
                 }
-                int counter=1;
-                while (counter<n-1) {
-                     for(int i=0;i<n-counter;i++){
-                        if(arr[i]>arr[i+1]){
-                            int temp=arr[i];
-                             arr[i]=arr[i+1];
-                             arr[i+1]=temp;
+
+                for (int i = n - 1; i >= 0; i--) {
+                    int didswap = 0;
+                    for (int j = 0; j <= i - 1; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            int temp = arr[j + 1];
+                            arr[j + 1] = arr[j];
+                            arr[j] = temp;
+                            didswap = 1;
                         }
-                        
-                     }
-                     counter++;
+                    }
+                    if (didswap == 0) {
+                        break;
+                    }
                 }
                 System.out.println("Sorted array is");
-                for(int i=0;i<n;i++){
-                    System.out.println(arr[i]);
+                for (int i = 0; i < n; i++) {
+                    System.out.print(arr[i] + " ");
                 }
             }
         }
-       
     }
 
+}

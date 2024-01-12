@@ -1,4 +1,4 @@
-public class reving_array {
+public class reversing_array {
    static void reverse(int arr[],int n){
         int start_idx=0;
         int end_idx=n-1;
