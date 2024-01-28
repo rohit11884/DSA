@@ -15,7 +15,7 @@ public class merge_sort {
         int left = low;
         int right = mid + 1;
         ArrayList<Integer> temp = new ArrayList<>();
-        while (low <= mid && right <= high) {
+        while (left <= mid && right <= high) {
             if (arr[left] < arr[right]) {
                 temp.add(arr[left]);
                 left++;
